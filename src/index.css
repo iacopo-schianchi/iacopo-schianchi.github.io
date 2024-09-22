@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
@@ -13,7 +16,15 @@ body {
   overflow-x: hidden;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-weight: bold;
   font-size: calc(400vw / 45);
+}
+
+.section {
+  margin-bottom: 200px;
 }
