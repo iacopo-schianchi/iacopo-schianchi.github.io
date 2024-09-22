@@ -1,0 +1,44 @@
+.card {
+  display: grid;
+  grid-template-columns: 26.876vw 1fr;
+  gap: 40px;
+  text-decoration: none;
+  cursor: default;
+}
+
+.card .project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0.6;
+  transition-duration: 0.5s;
+}
+
+.card:hover .project-info {
+  opacity: 1;
+}
+
+.card .title {
+  font-size: 2.78vw;
+  font-weight: normal;
+}
+
+.card:hover .video-container {
+  opacity: 1;
+  pointer-events: none;
+  overflow: hidden;
+  width: 26.876vw;
+  height: fit-content;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+.card .video-container {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  width: 26.876vw;
+  height: fit-content;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}

@@ -8,8 +8,10 @@ export default function Skills({ data }) {
 
   useEffect(() => {
     setSkillElements(
-      data.map((skill) => {
-        return <SkillBar name={skill.name} ability={skill.ability} />;
+      data.map((skill, index) => {
+        return (
+          <SkillBar key={index} name={skill.name} ability={skill.ability} />
+        );
       })
     );
   }, []);

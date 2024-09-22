@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Hero from './components/hero/Hero';
 import Skills from './components/skills/Skills';
+import Projects from './components/projects/Projects';
 import { getData } from './firebase';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <>
       <Hero />
       {data && <Skills data={data.skills} />}
+      {data && <Projects data={data.projects} />}
     </>
   );
 }

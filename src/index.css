@@ -26,6 +26,13 @@ h1 {
   font-size: calc(400vw / 45);
 }
 
+p {
+  font-weight: 300;
+  font-size: clamp(10px, 1.389vw, 20px);
+  line-height: clamp(20px, 2.36vw, 34px);
+}
+
 .section {
   margin-bottom: 200px;
+  padding-left: 6.67vw;
 }
