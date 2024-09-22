@@ -1,0 +1,23 @@
+.skill-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-bar-container .name {
+  font-size: 24px;
+}
+
+.skill-bar-container .bar {
+  background-color: #e1e1e1;
+  overflow: hidden;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.skill-bar-container .progress {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 0 10px 10px 0;
+}

@@ -1,3 +1,11 @@
 .skills {
   padding-left: 6.67vw;
 }
+
+.skill-container {
+  display: grid;
+  margin-right: 6.67vw;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 33.33%;
+  row-gap: 30px;
+}
