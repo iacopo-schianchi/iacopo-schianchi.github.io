@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
+import Glow from '../Glow';
 
 export default function Hero() {
   const finalLines = ["Hi, I'm", 'Iacopo Schianchi'];
@@ -22,11 +23,9 @@ export default function Hero() {
 
         i++;
 
-        // Check if we're at the end of "Hi,"
         if (lineIndex === 0 && currentLine.slice(0, i) === 'Hi,') {
           clearInterval(typingInterval);
 
-          // Pause for 1 second at "Hi,"
           setTimeout(() => {
             typingInterval = setInterval(() => {
               const nextChar = currentLine[i];
@@ -78,7 +77,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero">
+    <div className="hero" id="hero">
+      <Glow top="30vh" left="80vw" />
       <h1 className={`title ${finished[0] ? 'finished' : ''}`} id="typing-text">
         {lines[0]}
       </h1>

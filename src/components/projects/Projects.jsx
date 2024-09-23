@@ -27,7 +27,7 @@ export default function Projects({ data }) {
   }, []);
 
   return (
-    <div className="section projects">
+    <div className="section projects" id="projects">
       <SectionHeader text="Projects" />
       <div className="project-container">{cards != undefined && cards}</div>
     </div>

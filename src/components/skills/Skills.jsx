@@ -17,7 +17,7 @@ export default function Skills({ data }) {
   }, []);
 
   return (
-    <div className="section skills">
+    <div className="section skills" id="skills">
       <SectionHeader text="Skills" />
       <div className="skill-container">{skillElements}</div>
     </div>

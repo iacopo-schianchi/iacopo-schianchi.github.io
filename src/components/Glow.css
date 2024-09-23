@@ -1,0 +1,10 @@
+.glow {
+  position: absolute;
+  box-shadow: 200vw 0 1400px 80px var(--accent-color);
+  background-color: var(--accent-color);
+  height: 500px;
+  width: 500px;
+  transform: translateX(-200vw);
+  border-radius: 100%;
+  opacity: 0.4;
+}
