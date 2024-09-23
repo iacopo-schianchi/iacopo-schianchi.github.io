@@ -5,6 +5,7 @@ import Skills from './components/skills/Skills';
 import Projects from './components/projects/Projects';
 import { getData } from './firebase';
 import InfoCursor from './components/InfoCursor';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   const [data, setData] = useState();
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <InfoCursor />
       <Hero />
       {data && <Skills data={data.skills} />}

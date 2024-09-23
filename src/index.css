@@ -12,6 +12,10 @@
   scrollbar-width: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background-color);
   overflow-x: hidden;
