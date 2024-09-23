@@ -6,6 +6,10 @@
   cursor: default;
 }
 
+.card * {
+  pointer-events: none;
+}
+
 .card .project-info {
   display: flex;
   flex-direction: column;

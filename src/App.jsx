@@ -4,6 +4,7 @@ import Hero from './components/hero/Hero';
 import Skills from './components/skills/Skills';
 import Projects from './components/projects/Projects';
 import { getData } from './firebase';
+import InfoCursor from './components/InfoCursor';
 
 function App() {
   const [data, setData] = useState();
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <InfoCursor />
       <Hero />
       {data && <Skills data={data.skills} />}
       {data && <Projects data={data.projects} />}
