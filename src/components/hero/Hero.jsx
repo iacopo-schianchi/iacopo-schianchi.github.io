@@ -77,7 +77,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero" id="hero">
+    <div className="hero" id="iacopo-schianchi">
       <Glow top="30vh" left="80vw" />
       <h1 className={`title ${finished[0] ? 'finished' : ''}`} id="typing-text">
         {lines[0]}

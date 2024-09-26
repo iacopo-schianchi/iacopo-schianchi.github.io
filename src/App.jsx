@@ -6,6 +6,7 @@ import Projects from './components/projects/Projects';
 import { getData } from './firebase';
 import InfoCursor from './components/InfoCursor';
 import Navbar from './components/navbar/Navbar';
+import Experience from './components/experience/Experience';
 
 function App() {
   const [data, setData] = useState();
@@ -24,6 +25,7 @@ function App() {
       <Hero />
       {data && <Skills data={data.skills} />}
       {data && <Projects data={data.projects} />}
+      {data && <Experience data={data.experience} />}
     </>
   );
 }

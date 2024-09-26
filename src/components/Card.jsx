@@ -8,22 +8,38 @@ export default function Card({
   videoUrl,
   imageUrl,
   skillsDeveloped,
+  company,
   url,
+  dateStarted,
+  dateEnded,
 }) {
   return (
     <a className="card" href={url} target="_blank">
-      <div className="video-container">
-        <ReactPlayer
-          url={videoUrl}
-          playing={true}
-          loop={true}
-          muted={true}
-          width={'26.9vw'}
-          height={'15.117vw'}
-        />
-      </div>
+      {videoUrl && (
+        <div className="video-container">
+          <ReactPlayer
+            url={videoUrl}
+            playing={true}
+            loop={true}
+            muted={true}
+            width={'26.9vw'}
+            height={'15.117vw'}
+          />
+        </div>
+      )}
+      {imageUrl && <img src={imageUrl} className="image" />}
       <div className="project-info">
-        <h2 className="title">{name}</h2>
+        <div>
+          <div className="top-bar">
+            <h2 className="title">{name}</h2>
+            {dateStarted && (
+              <h3 className="work-period">
+                {dateStarted} - {dateEnded}
+              </h3>
+            )}
+          </div>
+          {company && <h4 className="company">{company}</h4>}
+        </div>
         <p>{description}</p>
       </div>
     </a>

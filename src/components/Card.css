@@ -10,6 +10,10 @@
   pointer-events: none;
 }
 
+.card p {
+  white-space: pre-wrap;
+}
+
 .card .project-info {
   display: flex;
   flex-direction: column;
@@ -45,4 +49,40 @@
   height: fit-content;
   border-radius: 10px;
   transition-duration: 0.5s;
+}
+
+.card:hover .image {
+  opacity: 1;
+  width: 100%;
+  aspect-ratio: 1.77786879;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card .image {
+  opacity: 0;
+  width: 100%;
+  aspect-ratio: 1.77786879;
+  object-fit: cover;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+.card .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .work-period {
+  font-weight: normal;
+  font-size: 30px;
+  color: #bdbdbd;
+}
+
+.card .company {
+  font-weight: normal;
+  font-size: 16px;
+  color: #bdbdbd;
+  margin-top: 6px;
 }

@@ -10,7 +10,6 @@ export default function Projects({ data }) {
   useEffect(() => {
     setCards(
       data.map((project, index) => {
-        console.log(index, project);
         return (
           <Card
             key={index}

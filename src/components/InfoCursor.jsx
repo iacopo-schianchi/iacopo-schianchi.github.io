@@ -21,7 +21,7 @@ export default function InfoCursor() {
         setSize(60);
       }
     });
-    let mouseLeaveListener = window.addEventListener('mouseout', (event) => {
+    let mouseOutListener = window.addEventListener('mouseout', (event) => {
       if (hoverIcons[event.target.className]) {
         setIcon(null);
         setSize(30);
@@ -31,7 +31,7 @@ export default function InfoCursor() {
     return () => {
       window.removeEventListener('mousemove', mouseMoveListener);
       window.removeEventListener('mouseover', mouseHoverListener);
-      window.removeEventListener('mouseout', mouseLeaveListener);
+      window.removeEventListener('mouseout', mouseOutListener);
     };
   }, []);
 
