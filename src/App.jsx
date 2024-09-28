@@ -7,6 +7,7 @@ import { getData } from './firebase';
 import InfoCursor from './components/InfoCursor';
 import Navbar from './components/navbar/Navbar';
 import Experience from './components/experience/Experience';
+import AboutMe from './components/about-me/AboutMe';
 
 function App() {
   const [data, setData] = useState();
@@ -23,9 +24,10 @@ function App() {
       <Navbar />
       <InfoCursor />
       <Hero />
-      {data && <Skills data={data.skills} />}
-      {data && <Projects data={data.projects} />}
+      {data && <AboutMe images={data.aboutMe.images} />}
       {data && <Experience data={data.experience} />}
+      {data && <Projects data={data.projects} />}
+      {data && <Skills data={data.skills} />}
     </>
   );
 }

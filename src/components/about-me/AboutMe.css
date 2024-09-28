@@ -1,0 +1,105 @@
+.about-me .sections {
+  display: flex;
+}
+
+.about-me .image {
+  width: 39.6527778vw;
+  border-radius: 10px 0 0 10px;
+  aspect-ratio: 0.749367089;
+  object-fit: cover;
+  z-index: 999;
+}
+
+.about-me .image-timer {
+  position: absolute;
+  height: 10px;
+  transform: translate(10px, -24px);
+  border-radius: 5px;
+  width: calc(39.6527778vw - 20px);
+  background-color: #bdbdbd;
+  overflow: hidden;
+}
+
+.about-me .image-timer .progress {
+  width: 0%;
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 0 5px 5px 0;
+}
+
+@keyframes growShrink {
+  0% {
+    width: 0%;
+  }
+  99.9% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.about-me .info {
+  flex: 1;
+}
+
+.about-me .top {
+  display: flex;
+  align-content: center;
+  gap: 1.1vw;
+  margin-bottom: 60px;
+}
+
+.about-me .highlighted {
+  font-weight: bold;
+  background: linear-gradient(to right, var(--accent-color), #acadfe);
+  -webkit-text-fill-color: transparent;
+  white-space: pre-wrap;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.about-me-text {
+  font-size: 1.67vw;
+  white-space: pre-wrap;
+}
+
+.about-me-text:last-child {
+  margin-top: 60px;
+}
+
+.about-me .activity-container {
+  --visible-items: 3;
+  --height: calc((7 * 1.67vw) + (7 * clamp(7px, 0.6vw, 0.6vw)));
+
+  overflow-y: scroll;
+  max-height: var(--height);
+  height: calc(
+    (var(--visible-items) * 1.67vw) +
+      (var(--visible-items) * clamp(7px, 0.6vw, 0.6vw))
+  );
+  position: relative; /* Ensures the overlay stays in place */
+}
+
+.about-me .overlay {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  right: 0;
+  height: 200%;
+  background: linear-gradient(
+    var(--background-color),
+    var(--background-color),
+    transparent,
+    var(--background-color),
+    var(--background-color)
+  ); /* Adjust overlay color and opacity */
+  pointer-events: none; /* Allows scrolling without affecting overlay */
+  z-index: 1; /* Ensures the overlay is above the content */
+}
+
+.about-me .activity-container p {
+  position: relative;
+  z-index: 0; /* Keeps content below the overlay */
+  font-size: 1.67vw;
+}

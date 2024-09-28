@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import './InfoCursor.css';
 import arrowIcon from '../assets/arrow-up-right.png';
+import scrollIcon from '../assets/scroll-icon.svg';
 
 export default function InfoCursor() {
   const hoverIcons = {
     card: arrowIcon,
+    'activity-text': scrollIcon,
   };
   const [size, setSize] = useState(30);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -16,6 +18,7 @@ export default function InfoCursor() {
     });
     let mouseHoverListener = window.addEventListener('mouseover', (event) => {
       let newIcon = hoverIcons[event.target.className];
+      console.log(event.target.className);
       if (newIcon) {
         setIcon(newIcon);
         setSize(60);

@@ -7,11 +7,17 @@ export default function Navbar() {
       <a href="#iacopo-schianchi" className="nav-button">
         Iacopo Schianchi
       </a>
-      <a href="#skills" className="nav-button">
-        Skills
+      <a href="#about-me" className="nav-button">
+        About me
+      </a>
+      <a href="#experience" className="nav-button">
+        Experience
       </a>
       <a href="#projects" className="nav-button">
         Projects
+      </a>
+      <a href="#skills" className="nav-button">
+        Skills
       </a>
     </nav>
   );
