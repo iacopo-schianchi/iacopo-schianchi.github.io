@@ -69,7 +69,7 @@ export default function AboutMe({ images }) {
           </div>
           <p className="about-me-text">
             <span className="highlighted">Italian </span>
-            fluent in English, Italian, and partly Spanish
+            fluent in English, Italian, and partially Spanish
           </p>
           <p className="about-me-text">
             Lived in the Czech Republic, Belgium, Romania, Switzerland, Iowa,
