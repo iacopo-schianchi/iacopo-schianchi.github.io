@@ -8,6 +8,7 @@ import InfoCursor from './components/InfoCursor';
 import Navbar from './components/navbar/Navbar';
 import Experience from './components/experience/Experience';
 import AboutMe from './components/about-me/AboutMe';
+import ContactMe from './components/contact-me/ContactMe';
 
 function App() {
   const [data, setData] = useState();
@@ -28,6 +29,7 @@ function App() {
       {data && <Experience data={data.experience} />}
       {data && <Projects data={data.projects} />}
       {data && <Skills data={data.skills} />}
+      <ContactMe />
     </>
   );
 }

@@ -4,7 +4,6 @@ import SectionHeader from '../SectionHeader';
 import Card from '../Card';
 
 export default function Projects({ data }) {
-  console.log('Data: ', data);
   const [cards, setCards] = useState();
 
   useEffect(() => {

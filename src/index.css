@@ -36,6 +36,10 @@ p {
   line-height: clamp(20px, 2.36vw, 34px);
 }
 
+svg {
+  width: 40px;
+}
+
 .section {
   margin-bottom: 200px;
   padding-left: 6.67vw;

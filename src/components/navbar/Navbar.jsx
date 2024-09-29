@@ -19,6 +19,9 @@ export default function Navbar() {
       <a href="#skills" className="nav-button">
         Skills
       </a>
+      <a href="#contact-me" className="nav-button">
+        Contact me
+      </a>
     </nav>
   );
 }

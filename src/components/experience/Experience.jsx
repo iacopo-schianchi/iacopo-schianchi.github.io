@@ -10,12 +10,6 @@ export default function Experience({ data }) {
   useEffect(() => {
     setCards(
       data.map((experience, index) => {
-        console.log(
-          'Experience data: ',
-          experience.imageUrl,
-          'd',
-          experience.videoUrl
-        );
         return (
           <Card
             key={index}

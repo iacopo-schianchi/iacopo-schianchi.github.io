@@ -6,6 +6,8 @@ import scrollIcon from '../assets/scroll-icon.svg';
 export default function InfoCursor() {
   const hoverIcons = {
     card: arrowIcon,
+    'email link': arrowIcon,
+    'link grid-link': arrowIcon,
     'activity-text': scrollIcon,
   };
   const [size, setSize] = useState(30);
@@ -18,7 +20,6 @@ export default function InfoCursor() {
     });
     let mouseHoverListener = window.addEventListener('mouseover', (event) => {
       let newIcon = hoverIcons[event.target.className];
-      console.log(event.target.className);
       if (newIcon) {
         setIcon(newIcon);
         setSize(60);
