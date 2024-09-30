@@ -9,4 +9,5 @@
   z-index: 900;
   pointer-events: none;
   opacity: 0.4;
+  filter: url(#noiseFilter);
 }

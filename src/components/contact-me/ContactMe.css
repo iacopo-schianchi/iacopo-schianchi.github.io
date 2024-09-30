@@ -4,6 +4,7 @@
   flex-direction: row;
   align-items: center;
   padding-left: 6.67vw;
+  margin-bottom: -150px;
 }
 
 .separator {
