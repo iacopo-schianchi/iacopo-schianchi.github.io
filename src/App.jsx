@@ -25,10 +25,10 @@ function App() {
       <Navbar />
       <InfoCursor />
       <Hero />
-      {data && <AboutMe images={data.aboutMe.images} />}
       {data && <Experience data={data.experience} />}
       {data && <Projects data={data.projects} />}
       {data && <Skills data={data.skills} />}
+      {data && <AboutMe images={data.aboutMe.images} />}
       <ContactMe />
     </>
   );

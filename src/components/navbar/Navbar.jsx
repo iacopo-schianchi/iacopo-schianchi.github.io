@@ -7,9 +7,6 @@ export default function Navbar() {
       <a href="#iacopo-schianchi" className="nav-button">
         Iacopo Schianchi
       </a>
-      <a href="#about-me" className="nav-button">
-        About me
-      </a>
       <a href="#experience" className="nav-button">
         Experience
       </a>
@@ -18,6 +15,9 @@ export default function Navbar() {
       </a>
       <a href="#skills" className="nav-button">
         Skills
+      </a>
+      <a href="#about-me" className="nav-button">
+        About me
       </a>
       <a href="#contact-me" className="nav-button">
         Contact me
