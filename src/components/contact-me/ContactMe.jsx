@@ -4,6 +4,7 @@ import LinkedInIcon from '../../assets/LinkedInIcon';
 import GitHubIcon from '../../assets/GitHubIcon';
 import PhoneIcon from '../../assets/PhoneIcon';
 import Glow from '../Glow';
+import ResumeIcon from '../../assets/ResumeIcon';
 
 export default function ContactMe() {
   return (
@@ -38,6 +39,14 @@ export default function ContactMe() {
               >
                 <GitHubIcon />
                 GitHub
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1gZ8ME6y5Rbg-lgm80wW1ljMFhkWPRd-K/view?usp=sharing"
+                target="_blank"
+                className="link grid-link"
+              >
+                <ResumeIcon />
+                Résumé
               </a>
             </div>
           </div>
