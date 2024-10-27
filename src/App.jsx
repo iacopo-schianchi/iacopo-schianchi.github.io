@@ -4,7 +4,7 @@ import { getAllBlogMetadata, getBlogPostContent } from './firebase';
 import Main from './pages/Main';
 import BlogList from './pages/BlogList';
 import Blog from './pages/Blog';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 
 export default function App() {
     const [metadata, setMetadata] = useState();
@@ -17,7 +17,7 @@ export default function App() {
     }, []);
 
     return (
-        <Router>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route
@@ -29,6 +29,6 @@ export default function App() {
                     element={<Blog metadata={metadata} />}
                 />
             </Routes>
-        </Router>
+        </HashRouter>
     );
 }

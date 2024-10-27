@@ -1,20 +1,21 @@
 .navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  margin: 16px 20px;
-  right: 0;
-  position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 16px 20px;
+    right: 0;
+    position: fixed;
 }
 
 .navbar .nav-button {
-  z-index: 999;
-  padding: 4px 0;
-  font-size: 20px;
-  color: #bdbdbd;
-  transition-duration: 0.2s;
+    z-index: 999;
+    padding: 4px 0;
+    font-size: 20px;
+    color: #bdbdbd;
+    text-decoration: underline;
+    transition-duration: 0.2s;
 }
 
 .navbar .nav-button:hover {
-  color: var(--text-color);
+    color: var(--text-color);
 }
