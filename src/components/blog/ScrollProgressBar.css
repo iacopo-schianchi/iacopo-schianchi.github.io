@@ -1,0 +1,12 @@
+.scroll-progress-bar-container {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.scroll-progress-bar-container .progress {
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 0 20px 20px 0;
+}

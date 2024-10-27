@@ -1,37 +1,34 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import Hero from './components/hero/Hero';
-import Skills from './components/skills/Skills';
-import Projects from './components/projects/Projects';
-import { getData } from './firebase';
-import InfoCursor from './components/InfoCursor';
-import Navbar from './components/navbar/Navbar';
-import Experience from './components/experience/Experience';
-import AboutMe from './components/about-me/AboutMe';
-import ContactMe from './components/contact-me/ContactMe';
+import { useEffect, useState } from 'react';
+import { getAllBlogMetadata, getBlogPostContent } from './firebase';
+import Main from './pages/Main';
+import BlogList from './pages/BlogList';
+import Blog from './pages/Blog';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [data, setData] = useState();
+export default function App() {
+    const [metadata, setMetadata] = useState();
 
-  useEffect(() => {
-    (async () => {
-      const response = await getData();
-      setData(response);
-    })();
-  }, []);
+    useEffect(() => {
+        (async () => {
+            const metadata = await getAllBlogMetadata();
+            setMetadata(metadata);
+        })();
+    }, []);
 
-  return (
-    <>
-      <Navbar />
-      <InfoCursor />
-      <Hero />
-      {data && <Experience data={data.experience} />}
-      {data && <Projects data={data.projects} />}
-      {data && <Skills data={data.skills} />}
-      {data && <AboutMe images={data.aboutMe.images} />}
-      <ContactMe />
-    </>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route
+                    path="/blogs"
+                    element={<BlogList metadata={metadata} />}
+                />
+                <Route
+                    path="/blogs/:id"
+                    element={<Blog metadata={metadata} />}
+                />
+            </Routes>
+        </Router>
+    );
 }
-
-export default App;

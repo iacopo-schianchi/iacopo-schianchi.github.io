@@ -1,0 +1,20 @@
+.blog-list {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.blog-link {
+    position: fixed;
+    align-items: end;
+    margin: 16px 20px;
+    right: 0;
+    position: fixed;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

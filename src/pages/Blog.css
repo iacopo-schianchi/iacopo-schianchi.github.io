@@ -1,0 +1,171 @@
+.blog {
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.blog .back-button {
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+.blog .header > img {
+    width: 100%;
+    max-width: 90vh;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.blog h1 {
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.blog .date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.blog .date-container p {
+    color: var(--accent-color);
+}
+
+.blog .date-container img {
+    height: clamp(14px, 2.5vw, 30px);
+}
+
+.react-markdown * {
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    color: #d3d3d3;
+}
+
+.react-markdown body {
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+
+.react-markdown {
+    text-align: start;
+    margin: auto;
+    width: 60%;
+    min-width: 460px;
+    margin-top: 100px;
+}
+
+.react-markdown a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.react-markdown a:hover {
+    text-decoration: underline;
+}
+
+.react-markdown p,
+.react-markdown blockquote,
+.react-markdown ul,
+.react-markdown ol,
+.react-markdown dl,
+.react-markdown table,
+.react-markdown pre {
+    margin: 15px 0;
+}
+
+.react-markdown ul,
+.react-markdown ol {
+    padding-left: 30px;
+}
+
+.react-markdown h1 {
+    color: white;
+    font-size: 2.8em;
+}
+
+.react-markdown h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.react-markdown h3 {
+    font-size: 1.5em;
+}
+
+.react-markdown h4 {
+    font-size: 1.2em;
+}
+
+.react-markdown h5 {
+    font-size: 1em;
+}
+
+.react-markdown h6 {
+    color: #777;
+    font-size: 1em;
+}
+
+.react-markdown h1,
+.react-markdown h2,
+.react-markdown h3,
+.react-markdown h4,
+.react-markdown h5,
+.react-markdown h6 {
+    font-weight: bold;
+    line-height: 1.7;
+    margin: 1em 0 15px 0;
+}
+
+.react-markdown h1 + p,
+.react-markdown h2 + p,
+.react-markdown h3 + p {
+    margin-top: 10px;
+}
+
+.react-markdown img {
+    max-width: 100%;
+}
+
+.react-markdown code,
+.react-markdown pre {
+    background-color: #5e5e5e;
+    border-radius: 3px;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    font-size: 12px;
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: pre;
+}
+
+.react-markdown pre code {
+    border: none;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+}
+
+/* .react-markdown table {
+    border-radius: 3px;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+} */
+
+.react-markdown table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.react-markdown td,
+.react-markdown th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
