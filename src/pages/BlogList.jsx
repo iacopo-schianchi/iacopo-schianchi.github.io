@@ -8,14 +8,13 @@ import InfoCursor from '../components/InfoCursor';
 export default function BlogList({ metadata }) {
     const [selectedCategories, setSelectedCategories] = useState({});
 
-    // Extract all unique categories
     useEffect(() => {
         if (metadata) {
             const categories = {};
             metadata.forEach((post) => {
                 post.tags.forEach((tag) => {
                     if (!categories[tag]) {
-                        categories[tag] = false; // Initialize each unique category as false
+                        categories[tag] = false;
                     }
                 });
             });
@@ -51,7 +50,7 @@ export default function BlogList({ metadata }) {
             <a href="/" className="link blog-link">
                 Personal portfolio
             </a>
-            <Hero finalLines={['Welcome to my', 'blogs']} />
+            <Hero finalLines={['Welcome to my', 'blog']} />
             <div className="section">
                 <div className="category-filters">
                     {Object.keys(selectedCategories).map((category, index) => (
