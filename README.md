@@ -1,6 +1,6 @@
 # Iacopo Schianchi's Personal Portfolio
 
-React website with personal portfolio and blogs
+React website with personal portfolio and blog
 
 ## Publishing changes
 
