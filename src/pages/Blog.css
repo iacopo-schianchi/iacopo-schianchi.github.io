@@ -19,6 +19,10 @@
     margin-bottom: 40px;
 }
 
+.blog img {
+    border-radius: 10px;
+}
+
 .blog h1 {
     font-family: Helvetica, arial, freesans, clean, sans-serif;
     font-size: 3em;

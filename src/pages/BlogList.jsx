@@ -71,7 +71,7 @@ export default function BlogList({ metadata }) {
                                 description={post.description}
                                 date={post.date}
                                 postId={post.slug.replace('post', '')}
-                                imageUrl="https://www.econlib.org/wp-content/uploads/2020/07/entrepreneurship2.jpg"
+                                imageUrl={post.imageUrl}
                             />
                         ))
                     ) : (

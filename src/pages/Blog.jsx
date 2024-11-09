@@ -46,7 +46,7 @@ export default function Blog({ metadata }) {
             </button>
             {blogMetadata && (
                 <div className="header">
-                    <img src={blogMetadata.imageUrl} alt="" />
+                    <img src={blogMetadata.headerImage} alt="" />
                     <h1>{blogMetadata.title}</h1>
                     <div className="date-container">
                         <img src={calendarIcon} alt="" />
