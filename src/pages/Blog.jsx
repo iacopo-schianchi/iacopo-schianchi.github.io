@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Blog.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getBlogPostContent } from '../firebase';
-import calendarIcon from '../assets/calendar-event.png';
+import { IconCalendarEvent } from '@tabler/icons-react';
 import ReactMarkdown from 'react-markdown';
 import InfoCursor from '../components/InfoCursor';
 import BackIcon from '../assets/BackIcon';
@@ -49,7 +49,7 @@ export default function Blog({ metadata }) {
                     <img src={blogMetadata.headerImage} alt="" />
                     <h1>{blogMetadata.title}</h1>
                     <div className="date-container">
-                        <img src={calendarIcon} alt="" />
+                        <IconCalendarEvent color="#2e96eb" size={30} />
                         <p>{blogMetadata.date}</p>
                     </div>
                 </div>

@@ -9,6 +9,6 @@
 }
 
 .category-button.selected {
-    background-color: #4a4dee50;
+    background-color: #2e96eb50;
     border-color: var(--accent-color);
 }

@@ -3,6 +3,8 @@ import './Hero.css';
 import Glow from '../Glow';
 
 export default function Hero({ finalLines }) {
+    const typeMs = 100;
+
     const [lines, setLines] = useState(['', '']);
     const [finished, setFinished] = useState([false, false]);
 
@@ -48,8 +50,8 @@ export default function Hero({ finalLines }) {
                                 );
                                 resolve();
                             }
-                        }, 200);
-                    }, 1000);
+                        }, typeMs);
+                    }, typeMs * 5);
                 }
 
                 if (i >= currentLine.length) {
@@ -66,7 +68,7 @@ export default function Hero({ finalLines }) {
                     );
                     resolve();
                 }
-            }, 200);
+            }, typeMs);
         });
     }
 

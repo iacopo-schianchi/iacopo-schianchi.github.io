@@ -8,6 +8,7 @@ import InfoCursor from '../components/InfoCursor';
 import Navbar from '../components/navbar/Navbar';
 import Experience from '../components/experience/Experience';
 import AboutMe from '../components/about-me/AboutMe';
+import ScrollArrow from '../components/ScrollArrow';
 import ContactMe from '../components/contact-me/ContactMe';
 
 export default function Main() {
@@ -23,12 +24,13 @@ export default function Main() {
     return (
         <>
             <Navbar />
+            <ScrollArrow />
             <InfoCursor />
             <Hero finalLines={["Hi, I'm", 'Iacopo Schianchi']} />
             {data && <Experience data={data.experience} />}
             {data && <Projects data={data.projects} />}
             {data && <Skills data={data.skills} />}
-            {data && <AboutMe images={data.aboutMe.images} />}
+            {/* {data && <AboutMe images={data.aboutMe.images} />} */}
             <ContactMe />
         </>
     );

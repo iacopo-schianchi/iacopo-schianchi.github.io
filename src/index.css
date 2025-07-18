@@ -1,46 +1,46 @@
 * {
-  --text-color: #ffffff;
-  --background-color: #181922;
-  --accent-color: #4a4dee;
+    --text-color: #ffffff;
+    --background-color: #09090a;
+    --accent-color: #2e96eb;
 
-  font-family: 'Azeret Mono';
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
-  user-select: none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    font-family: 'Azeret Mono';
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    user-select: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background-color);
-  overflow-x: hidden;
+    background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 h1 {
-  font-weight: bold;
-  font-size: calc(400vw / 45);
+    font-weight: bold;
+    font-size: calc(400vw / 50);
 }
 
 p {
-  font-weight: 300;
-  font-size: clamp(10px, 1.389vw, 20px);
-  line-height: clamp(20px, 2.36vw, 34px);
+    font-weight: 300;
+    font-size: clamp(10px, 1.389vw, 20px);
+    line-height: clamp(20px, 2.36vw, 34px);
 }
 
 svg {
-  width: 40px;
+    width: 40px;
 }
 
 .section {
-  margin-bottom: 200px;
-  padding-left: 6.67vw;
+    margin-bottom: 200px;
+    padding-left: 6.67vw;
 }

@@ -1,7 +1,24 @@
+.skills .category-header {
+    font-size: 40px;
+}
+
+.skills .category-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.skills .subcategory {
+    color: #bdbdbd;
+    font-size: 26px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .skills .skill-container {
-  display: grid;
-  margin-right: 6.67vw;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 33.33%;
-  row-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }

@@ -1,57 +1,58 @@
 .contact-me {
-  display: flex;
-  height: 100vh;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 6.67vw;
-  margin-bottom: -150px;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 6.67vw;
+    margin-bottom: -150px;
+    margin-right: 100px;
 }
 
 .separator {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
 }
 
 .separator h1 {
-  text-align: end;
-  transform: translateX(8px);
+    text-align: end;
+    transform: translateX(8px);
 }
 
 .email {
-  font-size: 2.22vw;
-  transition-duration: 0.2s;
+    font-size: 2.22vw;
+    transition-duration: 0.2s;
 }
 
 .link:hover {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .link * {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .link:hover path {
-  stroke: var(--accent-color);
+    stroke: var(--accent-color);
 }
 
 .links {
-  width: fit-content;
+    width: fit-content;
 }
 
 .link-grid {
-  display: grid;
-  row-gap: 8px;
-  width: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 20px;
+    display: grid;
+    row-gap: 8px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
 }
 
 .grid-link {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  text-decoration: none;
-  font-size: 1.39vw;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.39vw;
 }

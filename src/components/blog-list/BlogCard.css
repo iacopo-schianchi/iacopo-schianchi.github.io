@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    opacity: 0.6;
+    opacity: 0.4;
     transition-duration: 0.5s;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .blog-card .video-container {
-    opacity: 0;
+    opacity: 0.1;
     pointer-events: none;
     overflow: hidden;
     width: 26.876vw;
@@ -60,7 +60,7 @@
 }
 
 .blog-card .image {
-    opacity: 0;
+    opacity: 0.1;
     width: 100%;
     aspect-ratio: 1.77786879;
     object-fit: cover;

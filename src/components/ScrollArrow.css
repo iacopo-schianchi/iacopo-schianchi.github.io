@@ -1,0 +1,29 @@
+@keyframes bob {
+    0%,
+    100% {
+        transform: scale(3) translateY(0);
+    }
+    50% {
+        transform: scale(3) translateY(-15px);
+    }
+}
+
+.scroll-arrow {
+    position: fixed;
+    bottom: 0;
+    left: 100px;
+    width: 150px;
+    z-index: 1000;
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+.scroll-arrow.hidden {
+    opacity: 0;
+}
+
+.scroll-arrow svg {
+    transform: scale(3);
+    animation: bob 1.5s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+}

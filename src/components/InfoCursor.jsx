@@ -12,7 +12,7 @@ export default function InfoCursor() {
         'activity-text': scrollIcon,
     };
     const [size, setSize] = useState(30);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [mousePos, setMousePos] = useState({ x: null, y: null });
     const [icon, setIcon] = useState(null);
 
     useEffect(() => {
@@ -32,6 +32,15 @@ export default function InfoCursor() {
                 }
             }
         );
+        let initialHoverListener = window.addEventListener(
+            'mouseover',
+            (event) => {
+                if (mousePos.x == null && mousePos.y == null) {
+                    console.log('Init');
+                    setMousePos({ x: event.clientX, y: event.clientY });
+                }
+            }
+        );
         let mouseOutListener = window.addEventListener('mouseout', (event) => {
             if (hoverIcons[event.target.className]) {
                 setIcon(null);
@@ -42,21 +51,25 @@ export default function InfoCursor() {
         return () => {
             window.removeEventListener('mousemove', mouseMoveListener);
             window.removeEventListener('mouseover', mouseHoverListener);
+            window.removeEventListener('mouseover', initialHoverListener);
             window.removeEventListener('mouseout', mouseOutListener);
         };
     }, []);
 
     return (
-        <div
-            className="info-cursor"
-            style={{
-                backgroundSize: 'contain',
-                backgroundImage: `url(${icon})`,
-                top: `calc(${mousePos.y}px - ${size / 2}px)`,
-                left: `calc(${mousePos.x}px - ${size / 2}px)`,
-                width: `${size}px`,
-                height: `${size}px`,
-            }}
-        ></div>
+        mousePos.x != null &&
+        mousePos.y != null && (
+            <div
+                className="info-cursor"
+                style={{
+                    backgroundSize: 'contain',
+                    backgroundImage: `url(${icon})`,
+                    top: `calc(${mousePos.y}px - ${size / 2}px)`,
+                    left: `calc(${mousePos.x}px - ${size / 2}px)`,
+                    width: `${size}px`,
+                    height: `${size}px`,
+                }}
+            ></div>
+        )
     );
 }

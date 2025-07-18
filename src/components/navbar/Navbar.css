@@ -1,21 +1,106 @@
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin: 16px 20px;
-    right: 0;
+.nav-container {
     position: fixed;
+    z-index: 999;
+    background-color: #09090ad2;
+    width: 100%;
 }
 
-.navbar .nav-button {
-    z-index: 999;
-    padding: 4px 0;
+.nav-container.hidden {
+    background-color: transparent;
+}
+
+.navbar {
+    display: flex;
+    align-items: end;
+    right: 0;
+    top: -4px;
+    position: fixed;
+    background-color: #09090ad2;
+}
+
+.nav-button {
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    margin-top: 0;
+    padding: 10px 16px;
     font-size: 20px;
     color: #bdbdbd;
-    text-decoration: underline;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.navbar .nav-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: white;
+    z-index: -1;
+    transition: height 0.3s ease, top 0.3s ease;
+}
+
+.navbar .nav-button:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.nav-button:hover {
+    color: var(--background-color);
+}
+
+/* Mobile styles */
+
+.hamburger-button {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: rgb(177, 177, 177);
+    z-index: 1001;
     transition-duration: 0.2s;
 }
 
-.navbar .nav-button:hover {
+.hamburger-button:hover {
     color: var(--text-color);
+}
+
+.mobile-navbar {
+    display: none;
+    flex-direction: column;
+}
+
+.mobile-navbar.open {
+    display: flex;
+}
+
+.mobile-navbar.hidden {
+    width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-navbar .nav-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: width 0.3s ease, top 0.3s ease;
+}
+
+.mobile-navbar .nav-button:hover::before {
+    width: 100%;
+    top: 0;
+}
+
+.mobile-navbar .nav-button:hover::before {
+    width: 100%;
+    top: 0;
 }

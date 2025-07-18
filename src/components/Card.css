@@ -1,88 +1,89 @@
 .card {
-  display: grid;
-  grid-template-columns: 26.876vw 1fr;
-  gap: 40px;
-  text-decoration: none;
-  cursor: default;
+    display: grid;
+    grid-template-columns: 26.876vw 1fr;
+    gap: 40px;
+    text-decoration: none;
+    cursor: default;
 }
 
 .card * {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .card p {
-  white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .card .project-info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  opacity: 0.6;
-  transition-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0.4;
+    transition-duration: 0.5s;
 }
 
 .card:hover .project-info {
-  opacity: 1;
+    opacity: 1;
 }
 
 .card .title {
-  font-size: 2.78vw;
-  font-weight: normal;
+    font-size: 2.78vw;
+    font-weight: normal;
 }
 
 .card:hover .video-container {
-  opacity: 1;
-  pointer-events: none;
-  overflow: hidden;
-  width: 26.876vw;
-  height: fit-content;
-  border-radius: 10px;
-  transition-duration: 0.5s;
+    opacity: 1;
+    pointer-events: none;
+    overflow: hidden;
+    width: 26.876vw;
+    height: fit-content;
+    border-radius: 10px;
+    transition-duration: 0.5s;
 }
 
 .card .video-container {
-  opacity: 0;
-  pointer-events: none;
-  overflow: hidden;
-  width: 26.876vw;
-  height: fit-content;
-  border-radius: 10px;
-  transition-duration: 0.5s;
+    opacity: 0.1;
+    pointer-events: none;
+    overflow: hidden;
+    width: 26.876vw;
+    height: fit-content;
+    border-radius: 10px;
+    transition-duration: 0.5s;
 }
 
 .card:hover .image {
-  opacity: 1;
-  width: 100%;
-  aspect-ratio: 1.77786879;
-  object-fit: cover;
-  border-radius: 10px;
+    opacity: 1;
+    width: 100%;
+    aspect-ratio: 1.77786879;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .card .image {
-  opacity: 0;
-  width: 100%;
-  aspect-ratio: 1.77786879;
-  object-fit: cover;
-  border-radius: 10px;
-  transition-duration: 0.5s;
+    opacity: 0.1;
+    width: 100%;
+    aspect-ratio: 1.77786879;
+    object-fit: cover;
+    border-radius: 10px;
+    transition-duration: 0.5s;
 }
 
 .card .top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card .work-period {
-  font-weight: normal;
-  font-size: 2.08vw;
-  color: #bdbdbd;
+    font-weight: normal;
+    font-size: 1.6vw;
+    color: #bdbdbd;
+    text-wrap: nowrap;
 }
 
 .card .company {
-  font-weight: normal;
-  font-size: 1.04vw;
-  color: #bdbdbd;
-  margin-top: 6px;
+    font-weight: normal;
+    font-size: 1.04vw;
+    color: #bdbdbd;
+    margin-top: 6px;
 }
