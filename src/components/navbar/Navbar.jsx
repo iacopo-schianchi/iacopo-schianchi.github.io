@@ -59,9 +59,9 @@ export default function Navbar() {
                 <a onClick={() => onClick('contact-me')} className="nav-button">
                     Contact
                 </a>
-                <a href="/#/blogs" className="nav-button">
+                {/* <a href="/#/blogs" className="nav-button">
                     Blog &#x279C;
-                </a>
+                </a> */}
             </nav>
         </div>
     );
