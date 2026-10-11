@@ -41,7 +41,7 @@ export default function ContactMe() {
                                 GitHub
                             </a>
                             <a
-                                href="https://drive.google.com/file/d/1ujpCsnq0C-Bb6PwpHfC5VsEjDdoD2LxE/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1pnU6q9AeB8B-B50NCj26nWOwinNdlWfb/view?usp=sharing"
                                 target="_blank"
                                 className="link grid-link"
                             >
