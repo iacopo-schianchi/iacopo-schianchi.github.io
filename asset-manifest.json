@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a651d312.css",
-    "main.js": "/static/js/main.2b846d9b.js",
+    "main.css": "/static/css/main.57bdc8e7.css",
+    "main.js": "/static/js/main.1ced2826.js",
     "reactPlayerYouTube.js": "/static/js/reactPlayerYouTube.7863a6e8.chunk.js",
     "reactPlayerSoundCloud.js": "/static/js/reactPlayerSoundCloud.4c4a4448.chunk.js",
     "reactPlayerVimeo.js": "/static/js/reactPlayerVimeo.6ae641d8.chunk.js",
@@ -16,14 +16,9 @@
     "reactPlayerKaltura.js": "/static/js/reactPlayerKaltura.9ec01c40.chunk.js",
     "reactPlayerFilePlayer.js": "/static/js/reactPlayerFilePlayer.439bebd7.chunk.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.745310c3.chunk.js",
-    "static/media/HFLogo.svg": "/static/media/HFLogo.4708a8126f5141ff8381.svg",
-    "static/media/ClaudeLogo.svg": "/static/media/ClaudeLogo.0c27e6416d468e4465f1.svg",
-    "static/media/JavaLogo.svg": "/static/media/JavaLogo.3a152d92f36339cb3aaa.svg",
-    "static/media/scroll-icon.svg": "/static/media/scroll-icon.c6045e46ffdcc1aa80ee.svg",
-    "static/media/ExpoLogo.svg": "/static/media/ExpoLogo.4dcca9d161d5ab112bb7.svg",
     "index.html": "/index.html",
-    "main.a651d312.css.map": "/static/css/main.a651d312.css.map",
-    "main.2b846d9b.js.map": "/static/js/main.2b846d9b.js.map",
+    "main.57bdc8e7.css.map": "/static/css/main.57bdc8e7.css.map",
+    "main.1ced2826.js.map": "/static/js/main.1ced2826.js.map",
     "reactPlayerYouTube.7863a6e8.chunk.js.map": "/static/js/reactPlayerYouTube.7863a6e8.chunk.js.map",
     "reactPlayerSoundCloud.4c4a4448.chunk.js.map": "/static/js/reactPlayerSoundCloud.4c4a4448.chunk.js.map",
     "reactPlayerVimeo.6ae641d8.chunk.js.map": "/static/js/reactPlayerVimeo.6ae641d8.chunk.js.map",
@@ -40,7 +35,7 @@
     "reactPlayerPreview.745310c3.chunk.js.map": "/static/js/reactPlayerPreview.745310c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a651d312.css",
-    "static/js/main.2b846d9b.js"
+    "static/css/main.57bdc8e7.css",
+    "static/js/main.1ced2826.js"
   ]
 }
