@@ -1,27 +1,5 @@
-.contact-me {
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 6.67vw;
-    margin-bottom: -150px;
-    margin-right: 100px;
-}
-
-.separator {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-}
-
-.separator h1 {
-    text-align: end;
-    transform: translateX(8px);
-}
-
 .email {
-    font-size: 2.22vw;
+    font-size: 20px;
     transition-duration: 0.2s;
 }
 
@@ -42,11 +20,9 @@
 }
 
 .link-grid {
-    display: grid;
-    row-gap: 8px;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 20px;
+    margin-top: 6px;
+    display: flex;
+    gap: 4px;
 }
 
 .grid-link {
@@ -54,5 +30,5 @@
     width: fit-content;
     align-items: center;
     text-decoration: none;
-    font-size: 1.39vw;
+    font-size: 20px;
 }

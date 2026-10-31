@@ -1,8 +1,18 @@
+.section-header-container {
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+    gap: 12px;
+}
+
+.section-header-container .divider-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--text-color);
+    border-radius: 1px;
+}
+
 .section-header {
-  font-weight: normal;
-  font-size: 4.167vw;
-  margin-bottom: 60px;
-  border-bottom-width: 2px;
-  border-bottom-color: white;
-  border-bottom-style: solid;
+    font-weight: 600;
+    font-size: 32px;
 }

@@ -1,89 +1,181 @@
 .card {
+    --media-width: 280px;
+    --card-gap: 32px;
+
     display: grid;
-    grid-template-columns: 26.876vw 1fr;
-    gap: 40px;
+    grid-template-columns: var(--media-width) minmax(0, 1fr);
+    gap: var(--card-gap);
+    align-items: start;
+
+    width: 100%;
+    color: inherit;
     text-decoration: none;
     cursor: default;
+    padding: 16px 0;
+    transition: transform 0.3s ease;
 }
 
-.card * {
-    pointer-events: none;
+.card[href] {
+    cursor: pointer;
 }
 
-.card p {
-    white-space: pre-wrap;
+.card.no-media {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.card-media {
+    width: 100%;
+    min-width: 0;
+    height: fit-content;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    opacity: 0.75;
+    transition:
+        opacity 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.card .image,
+.card .video-container {
+    width: 100%;
+    height: 100%;
+}
+
+.card .image {
+    display: block;
+    object-fit: cover;
+}
+
+.card .video-container {
+    position: relative;
+}
+
+.card .video-container > div,
+.card .video-container iframe,
+.card .video-container video {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.card:hover .card-media,
+.card:focus-visible .card-media {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 .card .project-info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    opacity: 0.4;
-    transition-duration: 0.5s;
+    gap: 14px;
+    min-width: 0;
+    opacity: 0.85;
+    transition: opacity 0.4s ease;
 }
 
-.card:hover .project-info {
+.card:hover .project-info,
+.card:focus-visible .project-info {
     opacity: 1;
 }
 
-.card .title {
-    font-size: 2.78vw;
-    font-weight: normal;
-}
-
-.card:hover .video-container {
-    opacity: 1;
-    pointer-events: none;
-    overflow: hidden;
-    width: 26.876vw;
-    height: fit-content;
-    border-radius: 10px;
-    transition-duration: 0.5s;
-}
-
-.card .video-container {
-    opacity: 0.1;
-    pointer-events: none;
-    overflow: hidden;
-    width: 26.876vw;
-    height: fit-content;
-    border-radius: 10px;
-    transition-duration: 0.5s;
-}
-
-.card:hover .image {
-    opacity: 1;
-    width: 100%;
-    aspect-ratio: 1.77786879;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.card .image {
-    opacity: 0.1;
-    width: 100%;
-    aspect-ratio: 1.77786879;
-    object-fit: cover;
-    border-radius: 10px;
-    transition-duration: 0.5s;
+.card .card-header {
+    min-width: 0;
 }
 
 .card .top-bar {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+}
+
+.card .title {
+    margin: 0;
+    font-size: clamp(1.25rem, 1.8vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    min-width: 0;
 }
 
 .card .work-period {
+    flex-shrink: 0;
+    margin: 0;
+    font-size: clamp(0.85rem, 1vw, 1rem);
     font-weight: normal;
-    font-size: 1.6vw;
-    color: #bdbdbd;
-    text-wrap: nowrap;
+    color: #9ca3af;
+    white-space: nowrap;
 }
 
 .card .company {
-    font-weight: normal;
-    font-size: 1.04vw;
-    color: #bdbdbd;
-    margin-top: 6px;
+    margin: 4px 0 0;
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.card .card-content {
+    min-width: 0;
+    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card .card-content p {
+    margin: 0 0 0.75em;
+    white-space: pre-wrap;
+}
+
+.card .card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.card .card-content ul,
+.card .card-content ol {
+    margin: 0;
+    padding-left: 1.25em;
+}
+
+.card .card-content li {
+    padding-left: 0.1em;
+    margin-bottom: 4px;
+}
+
+.card .card-content a {
+    pointer-events: auto;
+    text-decoration: underline;
+    color: inherit;
+}
+
+.card.no-media .project-info {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .card {
+        --media-width: 220px;
+        --card-gap: 24px;
+    }
+}
+
+@media (max-width: 580px) {
+    .card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .card .card-media {
+        aspect-ratio: 16 / 9;
+        max-height: 240px;
+    }
+
+    .card .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
 }

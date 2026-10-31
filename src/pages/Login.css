@@ -1,0 +1,125 @@
+.login-page {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-sizing: border-box;
+    max-width: 440px;
+    padding: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.login-home-link {
+    color: #a7b0c1;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 48px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.login-home-link:hover {
+    color: var(--accent-color);
+}
+
+.login-eyebrow {
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 12px;
+}
+
+.login-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.login-description {
+    color: #a7b0c1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.login-form input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 12px 14px;
+    transition: border-color 0.2s ease;
+    user-select: text;
+    width: 100%;
+}
+
+.login-form input:focus {
+    border-color: var(--accent-color);
+}
+
+.login-error {
+    color: #ff8e8e;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: -4px 0 16px;
+}
+
+.login-submit {
+    background: var(--accent-color);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 16px;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.login-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.login-submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.login-status {
+    color: #a7b0c1;
+    font-size: 15px;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 28px 24px;
+    }
+
+    .login-home-link {
+        margin-bottom: 36px;
+    }
+}

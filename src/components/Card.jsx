@@ -1,23 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
+import ReactMarkdown from 'react-markdown';
 import './Card.css';
 
-export default function Card({
-    name,
-    description,
-    videoUrl,
-    imageUrl,
-    skillsDeveloped,
-    company,
-    url,
-    dateStarted,
-    dateEnded,
-}) {
+export default function Card({ item }) {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
+    const { title, subtitle, date, content, image, video, link } = item;
+
+    const hasMedia = Boolean(image || video);
+
     useEffect(() => {
-        if (!videoUrl) return;
+        if (!video || !videoRef.current) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -27,48 +22,66 @@ export default function Card({
                 root: null,
                 rootMargin: '0px',
                 threshold: 0.5,
-            }
+            },
         );
 
-        if (videoRef.current) {
-            observer.observe(videoRef.current);
-        }
+        observer.observe(videoRef.current);
 
-        return () => {
-            if (videoRef.current) {
-                observer.unobserve(videoRef.current);
-            }
-        };
-    }, [videoUrl]);
+        return () => observer.disconnect();
+    }, [video]);
+
+    const Tag = link ? 'a' : 'div';
+
     return (
-        <a className="card" href={url} target="_blank">
-            {videoUrl && (
-                <div className="video-container" ref={videoRef}>
-                    <ReactPlayer
-                        url={videoUrl}
-                        playing={isPlaying}
-                        loop={true}
-                        muted={true}
-                        width={'26.9vw'}
-                        height={'15.117vw'}
-                    />
+        <Tag
+            className={`card ${hasMedia ? 'has-media' : 'no-media'}`}
+            {...(link
+                ? { href: link, target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+        >
+            {hasMedia && (
+                <div className="card-media">
+                    {video ? (
+                        <div className="video-container" ref={videoRef}>
+                            <ReactPlayer
+                                src={video}
+                                playing={isPlaying}
+                                loop
+                                muted
+                                playsInline
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>
+                    ) : (
+                        <img src={image} className="image" alt={title || ''} />
+                    )}
                 </div>
             )}
-            {imageUrl && <img src={imageUrl} className="image" />}
+
             <div className="project-info">
-                <div>
-                    <div className="top-bar">
-                        <h2 className="title">{name}</h2>
-                        {dateStarted && (
-                            <h3 className="work-period">
-                                {dateStarted} - {dateEnded}
-                            </h3>
+                {(title || date || subtitle) && (
+                    <div className="card-header">
+                        {(title || date) && (
+                            <div className="top-bar">
+                                {title && <h2 className="title">{title}</h2>}
+
+                                {date && (
+                                    <span className="work-period">{date}</span>
+                                )}
+                            </div>
                         )}
+
+                        {subtitle && <h4 className="company">{subtitle}</h4>}
                     </div>
-                    {company && <h4 className="company">{company}</h4>}
-                </div>
-                <p>{description}</p>
+                )}
+
+                {content && (
+                    <div className="card-content">
+                        <ReactMarkdown>{content}</ReactMarkdown>
+                    </div>
+                )}
             </div>
-        </a>
+        </Tag>
     );
 }

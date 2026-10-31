@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Hero from '../components/hero/Hero';
 import BlogCard from '../components/blog-list/BlogCard';
 import CategoryButton from '../components/blog-list/CategoryButton';
-import InfoCursor from '../components/InfoCursor';
+import InfoCursor from '../components/CursorGradient';
 
 export default function BlogList({ metadata }) {
     const [selectedCategories, setSelectedCategories] = useState({});
@@ -30,7 +30,7 @@ export default function BlogList({ metadata }) {
     };
 
     const isAnyCategorySelected = Object.values(selectedCategories).some(
-        (isSelected) => isSelected
+        (isSelected) => isSelected,
     );
 
     console.log(isAnyCategorySelected);
@@ -39,7 +39,7 @@ export default function BlogList({ metadata }) {
         ? metadata.filter(
               (post) =>
                   !isAnyCategorySelected ||
-                  post.tags.some((tag) => selectedCategories[tag])
+                  post.tags.some((tag) => selectedCategories[tag]),
           )
         : [];
     console.log(filteredMetadata);

@@ -1,0 +1,39 @@
+.cursor-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    contain: paint;
+}
+
+.cursor-gradient::before {
+    content: '';
+    position: absolute;
+
+    width: 1000px;
+    height: 1000px;
+
+    left: 0;
+    top: 0;
+
+    transform: translate3d(
+        calc(var(--x, 50vw) - 50%),
+        calc(var(--y, 30vh) - 50%),
+        0
+    );
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(51, 99, 196, 0.13) 0%,
+        rgba(51, 99, 196, 0.09) 20%,
+        rgba(51, 99, 196, 0.045) 40%,
+        rgba(51, 99, 196, 0.015) 55%,
+        transparent 70%
+    );
+
+    filter: blur(45px);
+    will-change: transform;
+}

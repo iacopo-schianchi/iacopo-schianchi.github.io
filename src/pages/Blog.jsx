@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getBlogPostContent } from '../firebase';
 import { IconCalendarEvent } from '@tabler/icons-react';
 import ReactMarkdown from 'react-markdown';
-import InfoCursor from '../components/InfoCursor';
+import InfoCursor from '../components/CursorGradient';
 import BackIcon from '../assets/BackIcon';
 import ScrollProgressBar from '../components/blog/ScrollProgressBar';
 import remarkGfm from 'remark-gfm';
@@ -29,7 +29,7 @@ export default function Blog({ metadata }) {
     useEffect(() => {
         if (metadata) {
             setBlogMetadata(
-                metadata.filter((post) => post.slug === `post${id}`)[0]
+                metadata.filter((post) => post.slug === `post${id}`)[0],
             );
         }
     }, [metadata]);

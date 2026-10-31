@@ -1,10 +1,11 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { getAllBlogMetadata, getBlogPostContent } from './firebase';
+import { getAllBlogMetadata } from './firebase';
 import Main from './pages/Main';
-import BlogList from './pages/BlogList';
-import Blog from './pages/Blog';
 import { Routes, Route, HashRouter } from 'react-router-dom';
+import Research from './pages/Research';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 export default function App() {
     const [metadata, setMetadata] = useState();
@@ -20,14 +21,9 @@ export default function App() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route
-                    path="/blogs"
-                    element={<BlogList metadata={metadata} />}
-                />
-                <Route
-                    path="/blogs/:id"
-                    element={<Blog metadata={metadata} />}
-                />
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/research/:id" element={<Research />} />
             </Routes>
         </HashRouter>
     );

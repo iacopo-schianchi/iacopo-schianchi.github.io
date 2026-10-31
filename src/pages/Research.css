@@ -1,0 +1,68 @@
+.research-detail-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: inherit;
+    line-height: 1.6;
+}
+
+.research-title {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.research-meta {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.research-section {
+    margin-bottom: 24px;
+}
+
+.research-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+.research-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.research-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: var(--accent-color);
+    color: #fff;
+    transition: opacity 0.2s ease;
+}
+
+.research-btn:hover {
+    opacity: 0.9;
+}
+
+.research-status {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 1.2rem;
+    color: #9ca3af;
+}
+
+.research-status.error {
+    color: #ef4444;
+}

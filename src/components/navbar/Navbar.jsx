@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './Navbar.css';
+import ContactMe from '../contact-me/ContactMe';
 
-export default function Navbar() {
+export default function Navbar({ sections }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
     const [visible, setVisible] = useState(false);
 
@@ -15,16 +16,53 @@ export default function Navbar() {
     }, []);
 
     function onClick(id) {
-        document
-            .getElementById(id)
-            ?.scrollIntoView({ scrollBehavior: 'smooth' });
+        const targetElement = document.getElementById(id);
+        const scrollContainer = document.querySelector('.page-content');
+
+        if (targetElement && scrollContainer) {
+            const topPos =
+                scrollContainer.scrollTop +
+                targetElement.getBoundingClientRect().top -
+                scrollContainer.getBoundingClientRect().top;
+            scrollContainer.scrollTo({
+                top: topPos,
+                behavior: 'smooth',
+            });
+        } else {
+            targetElement?.scrollIntoView({ behavior: 'smooth' });
+        }
 
         if (isMobile) setVisible(false);
     }
 
     return (
         <div className={`nav-container ${!visible && 'hidden'}`}>
-            {isMobile && (
+            <h1 className="name">
+                Hi, I'm <span className="highlight">Iacopo</span>
+            </h1>
+            <div>
+                <h2 style={{ marginBottom: 10 }}>
+                    NLP &bull; Explainability &bull; Computer Vision
+                </h2>
+                <p>
+                    Researching and building more explainable, reliable NLP and
+                    computer vision systems
+                </p>
+            </div>
+            <nav
+                className={
+                    isMobile ? `mobile-navbar ${visible && 'open'}` : 'navbar'
+                }
+            >
+                {sections?.map(({ id, title }) => (
+                    <a onClick={() => onClick(id)} key={id}>
+                        {title}
+                    </a>
+                ))}
+            </nav>
+            <ContactMe />
+
+            {/* {isMobile && (
                 <button
                     className="hamburger-button"
                     onClick={() => setVisible((prev) => !prev)}
@@ -53,16 +91,10 @@ export default function Navbar() {
                 <a onClick={() => onClick('skills')} className="nav-button">
                     Skills
                 </a>
-                {/* <a onClick={() => onClick('about-me')} className="nav-button">
-                    About
-                </a> */}
                 <a onClick={() => onClick('contact-me')} className="nav-button">
                     Contact
                 </a>
-                {/* <a href="/#/blogs" className="nav-button">
-                    Blog &#x279C;
-                </a> */}
-            </nav>
+            </nav> */}
         </div>
     );
 }
