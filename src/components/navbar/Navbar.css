@@ -34,10 +34,41 @@
     .nav-container .name {
         animation: none;
     }
+
+    .nav-secondary-content,
+    .nav-secondary-content.is-ready {
+        transform: none;
+        transition: none;
+    }
 }
 
 .nav-container .name .highlight {
     color: var(--accent-color);
+}
+
+.nav-secondary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    visibility: hidden;
+    transition:
+        opacity 500ms ease,
+        transform 500ms ease,
+        visibility 0s linear 500ms;
+}
+
+.nav-secondary-content.is-ready {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+    transition:
+        opacity 500ms ease,
+        transform 500ms ease,
+        visibility 0s;
 }
 
 .navbar {

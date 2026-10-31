@@ -5,6 +5,7 @@ import ContactMe from '../contact-me/ContactMe';
 export default function Navbar({ sections }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
     const [visible, setVisible] = useState(false);
+    const sectionsLoaded = sections !== undefined;
 
     useEffect(() => {
         const handleResize = () => {
@@ -40,27 +41,34 @@ export default function Navbar({ sections }) {
             <h1 className="name">
                 Hi, I'm <span className="highlight">Iacopo</span>
             </h1>
-            <div>
-                <h2 style={{ marginBottom: 10 }}>
-                    NLP &bull; Explainability &bull; Computer Vision
-                </h2>
-                <p>
-                    Researching and building more explainable, reliable NLP and
-                    computer vision systems
-                </p>
-            </div>
-            <nav
-                className={
-                    isMobile ? `mobile-navbar ${visible && 'open'}` : 'navbar'
-                }
+            <div
+                className={`nav-secondary-content ${sectionsLoaded ? 'is-ready' : ''}`}
+                aria-hidden={!sectionsLoaded}
             >
-                {sections?.map(({ id, title }) => (
-                    <a onClick={() => onClick(id)} key={id}>
-                        {title}
-                    </a>
-                ))}
-            </nav>
-            <ContactMe />
+                <div>
+                    <h2 style={{ marginBottom: 10 }}>
+                        NLP &bull; Explainability &bull; Computer Vision
+                    </h2>
+                    <p>
+                        Researching and building more explainable, reliable NLP
+                        and computer vision systems
+                    </p>
+                </div>
+                <nav
+                    className={
+                        isMobile
+                            ? `mobile-navbar ${visible && 'open'}`
+                            : 'navbar'
+                    }
+                >
+                    {sections?.map(({ id, title }) => (
+                        <a onClick={() => onClick(id)} key={id}>
+                            {title}
+                        </a>
+                    ))}
+                </nav>
+                <ContactMe />
+            </div>
 
             {/* {isMobile && (
                 <button
