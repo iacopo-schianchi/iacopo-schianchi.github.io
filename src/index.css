@@ -14,14 +14,15 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
-    height: 100vh;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
     background-color: var(--background-color);
-    overflow: hidden;
-    height: 100vh;
+    min-height: 100%;
+    overflow: visible;
 }
 
 *::-webkit-scrollbar {

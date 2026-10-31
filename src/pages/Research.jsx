@@ -30,8 +30,6 @@ export default function Research() {
         }
     }, [id]);
 
-    console.log(research);
-
     if (loading) {
         return <div className="research-status">Loading research...</div>;
     }
