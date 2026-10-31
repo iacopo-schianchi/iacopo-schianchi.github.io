@@ -9,6 +9,9 @@ import {
     updateDoc,
     deleteField,
     runTransaction,
+    setDoc,
+    deleteDoc,
+    writeBatch,
 } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import {
@@ -63,17 +66,114 @@ async function fetchSections(sectionsQuery) {
     return sections;
 }
 
+async function fetchSectionOrder() {
+    const orderSnapshot = await getDoc(doc(db, 'websiteData', 'sectionOrder'));
+    const order = orderSnapshot.exists() ? orderSnapshot.data().order : [];
+
+    return Array.isArray(order)
+        ? order.filter((sectionId) => typeof sectionId === 'string')
+        : [];
+}
+
+function orderSections(sections, order) {
+    const sectionsById = new Map(sections.map((section) => [section.id, section]));
+    const orderedSections = [];
+    const includedIds = new Set();
+
+    order.forEach((sectionId) => {
+        const section = sectionsById.get(sectionId);
+        if (section && !includedIds.has(sectionId)) {
+            orderedSections.push(section);
+            includedIds.add(sectionId);
+        }
+    });
+
+    sections.forEach((section) => {
+        if (!includedIds.has(section.id)) orderedSections.push(section);
+    });
+
+    return orderedSections;
+}
+
 export async function getVisibleSections() {
     const sectionsQuery = query(
         collection(db, 'sections'),
         where('websiteVisible', '==', true),
     );
 
-    return fetchSections(sectionsQuery);
+    const [sections, order] = await Promise.all([
+        fetchSections(sectionsQuery),
+        fetchSectionOrder(),
+    ]);
+
+    return orderSections(sections, order);
 }
 
 export async function getDashboardSections() {
-    return fetchSections(collection(db, 'sections'));
+    const [sections, order] = await Promise.all([
+        fetchSections(collection(db, 'sections')),
+        fetchSectionOrder(),
+    ]);
+    const orderedSections = orderSections(sections, order);
+
+    return {
+        sections: orderedSections,
+        order: orderedSections.map((section) => section.id),
+    };
+}
+
+export async function updateSectionOrder(order) {
+    await setDoc(
+        doc(db, 'websiteData', 'sectionOrder'),
+        { order },
+        { merge: true },
+    );
+}
+
+export async function addSection(title) {
+    const sectionRef = doc(collection(db, 'sections'));
+    const section = {
+        title,
+        websiteVisible: false,
+        itemOrder: [],
+    };
+
+    await setDoc(sectionRef, section);
+    return { id: sectionRef.id, ...section, items: {} };
+}
+
+export async function updateSectionTitle(sectionId, title) {
+    await updateDoc(doc(db, 'sections', sectionId), { title });
+}
+
+export async function updateSectionVisibility(sectionId, websiteVisible) {
+    await updateDoc(doc(db, 'sections', sectionId), { websiteVisible });
+}
+
+export async function removeSection(sectionId) {
+    const sectionRef = doc(db, 'sections', sectionId);
+    const itemsSnapshot = await getDocs(
+        collection(db, 'sections', sectionId, 'items'),
+    );
+    const itemDocs = itemsSnapshot.docs;
+    const batchSize = 450;
+
+    if (itemDocs.length === 0) {
+        await deleteDoc(sectionRef);
+        return;
+    }
+
+    for (let offset = 0; offset < itemDocs.length; offset += batchSize) {
+        const batch = writeBatch(db);
+        const itemsInBatch = itemDocs.slice(offset, offset + batchSize);
+        itemsInBatch.forEach((itemDoc) => batch.delete(itemDoc.ref));
+
+        if (offset + itemsInBatch.length === itemDocs.length) {
+            batch.delete(sectionRef);
+        }
+
+        await batch.commit();
+    }
 }
 
 export async function updateSectionItem(sectionId, itemId, fields) {

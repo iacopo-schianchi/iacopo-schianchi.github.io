@@ -1,35 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import ReactPlayer from 'react-player';
 import ReactMarkdown from 'react-markdown';
 import './Card.css';
 
 export default function Card({ item }) {
-    const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const { title, subtitle, date, content, image, video, link } = item;
 
     const hasMedia = Boolean(image || video);
-
-    useEffect(() => {
-        if (!video || !videoRef.current) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsPlaying(entry.isIntersecting);
-            },
-            {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5,
-            },
-        );
-
-        observer.observe(videoRef.current);
-
-        return () => observer.disconnect();
-    }, [video]);
-
     const Tag = link ? 'a' : 'div';
 
     return (
@@ -40,15 +19,19 @@ export default function Card({ item }) {
                 : {})}
         >
             {hasMedia && (
-                <div className="card-media">
+                <div
+                    className="card-media"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
                     {video ? (
-                        <div className="video-container" ref={videoRef}>
+                        <div className="video-container">
                             <ReactPlayer
-                                src={video}
-                                playing={isPlaying}
+                                url={video}
+                                playing={isHovered}
                                 loop
                                 muted
-                                playsInline
+                                playsinline
                                 width="100%"
                                 height="100%"
                             />
@@ -65,13 +48,11 @@ export default function Card({ item }) {
                         {(title || date) && (
                             <div className="top-bar">
                                 {title && <h2 className="title">{title}</h2>}
-
                                 {date && (
                                     <span className="work-period">{date}</span>
                                 )}
                             </div>
                         )}
-
                         {subtitle && <h4 className="company">{subtitle}</h4>}
                     </div>
                 )}
